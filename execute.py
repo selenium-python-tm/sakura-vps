@@ -16,15 +16,10 @@ ipv4 = args[1]
 login_password = args[2]
 ssh_password = args[3]
 
-from pyvirtualdisplay import Display
-display = Display(visible=0, size=(1200, 833))
-display.start()
-
 # Initialize Web driver
-#chrome_options = Options()
-#chrome_options.add_argument("--headless")
-#driver = webdriver.Chrome(options=chrome_options)
-driver = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(options=chrome_options)
 time.sleep(4)
 
 driver.get("https://secure.sakura.ad.jp/vps/#/login?method=ip")
