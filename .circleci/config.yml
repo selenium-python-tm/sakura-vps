@@ -14,4 +14,4 @@ jobs:
             wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo dpkg -i google-chrome-stable_current_amd64.deb
       - run: 
-          command: python execute.py IPV4 LOGIN_PASSWD SSH_PASSWD
+          command: python execute.py ${IPV4} ${LOGIN_PASSWD} ${SSH_PASSWD}
