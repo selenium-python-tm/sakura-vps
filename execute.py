@@ -21,9 +21,10 @@ display = Display(visible=0, size=(1200, 833))
 display.start()
 
 # Initialize Web driver
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(options=chrome_options)
+#chrome_options = Options()
+#chrome_options.add_argument("--headless")
+#driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Chrome()
 
 driver.get("https://secure.sakura.ad.jp/vps/#/login?method=ip")
 driver.set_window_size(1200, 833)
