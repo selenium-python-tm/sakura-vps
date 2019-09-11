@@ -16,7 +16,6 @@ login_password = args[2]
 ssh_password = args[3]
 
 # Initialize Web driver
-import chromedriver_binary
 self.driver = webdriver.Chrome()
 
 self.driver.get("https://secure.sakura.ad.jp/vps/#/login")
