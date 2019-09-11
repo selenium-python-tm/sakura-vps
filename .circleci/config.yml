@@ -3,10 +3,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: selenium/standalone-chrome
+      - image: circleci/python 
     steps:
       - checkout
       - run: 
-          command: python --version 
+          command: |
+            pip install selenium
+            pp install chromedriver-binary 
       - run: 
           command: python execute.py IPV4 LOGIN_PASSWD SSH_PASSWD
