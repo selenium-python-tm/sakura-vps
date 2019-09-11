@@ -8,6 +8,7 @@ jobs:
       - checkout
       - run: 
           command: |
+            sudo apt install python-pip
             sudo pip install selenium
       - run: 
           command: python execute.py IPV4 LOGIN_PASSWD SSH_PASSWD
