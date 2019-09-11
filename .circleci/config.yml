@@ -8,7 +8,8 @@ jobs:
       - checkout
       - run: 
           command: |
-            sudo apt install -y chromium-browser
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo apt install ./google-chrome-stable_current_amd64.deb
             sudo pip install selenium
             sudo pip install chromedriver-binary 
       - run: 
