@@ -1,0 +1,12 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: selenium/standalone-chrome
+    steps:
+      - checkout
+      - run: sudo pip install selenium
+      - run: sudo pip install requests
+      - run: 
+          command: python execute.py IPV4 LOGIN_PASSWD SSH_PASSWD
