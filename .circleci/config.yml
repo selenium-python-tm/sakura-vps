@@ -7,4 +7,6 @@ jobs:
     steps:
       - checkout
       - run: 
+          command: python --version 
+      - run: 
           command: python execute.py IPV4 LOGIN_PASSWD SSH_PASSWD
