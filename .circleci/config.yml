@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run: 
           command: |
-            suod pip install selenium
+            sudo pip install selenium
             sudo pip install chromedriver-binary 
       - run: 
           command: python execute.py IPV4 LOGIN_PASSWD SSH_PASSWD
