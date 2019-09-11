@@ -23,6 +23,8 @@ driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("https://secure.sakura.ad.jp/vps/#/login?method=ip")
 driver.set_window_size(1200, 833)
+html = driver.page_source
+print(html)
 driver.find_element(By.ID, "ip-id").send_keys(ipv4)
 driver.find_element(By.ID, "ip-password").send_keys(login_password)
 driver.find_element(By.CSS_SELECTOR, ".navbar-right:nth-child(1)").click()
