@@ -10,7 +10,6 @@ jobs:
           command: |
             sudo apt -y update
             sudo apt -y install python-pip
-            sudo apt-get -y install xorg 
             sudo apt-get -y install xvfb
             sudo pip install selenium
             sudo pip install pyvirtualdisplay
