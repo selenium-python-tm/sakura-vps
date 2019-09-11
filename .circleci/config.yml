@@ -8,6 +8,7 @@ jobs:
       - checkout
       - run: 
           command: |
+            sudo apt install -y chromium-browser
             sudo pip install selenium
             sudo pip install chromedriver-binary 
       - run: 
