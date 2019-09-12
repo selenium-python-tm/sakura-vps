@@ -5,13 +5,22 @@ jobs:
     docker:
       - image: selenium/standalone-chrome
     steps:
-      - checkout
-      - run: 
+#      - checkout
+#      - run: 
+#          command: |
+#            sudo apt -y update
+#            sudo apt -y install python-pip
+#            sudo pip install selenium
+#            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#            sudo dpkg -i google-chrome-stable_current_amd64.deb
+#      - run: 
+#          command: python execute.py ${IPV4} ${LOGIN_PASSWD} ${SSH_PASSWD}
+#      - run:
+#          comannd: sleep 120
+      - run:
           command: |
             sudo apt -y update
             sudo apt -y install python-pip
-            sudo pip install selenium
-            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo dpkg -i google-chrome-stable_current_amd64.deb
-      - run: 
-          command: python execute.py ${IPV4} ${LOGIN_PASSWD} ${SSH_PASSWD}
+            sudo pip install ansible
+      - run:
+          command: ansible -m "cat /etc/readhat-release"
