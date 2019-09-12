@@ -15,12 +15,12 @@ jobs:
             sudo dpkg -i google-chrome-stable_current_amd64.deb
       - run: 
           command: python execute.py ${IPV4} ${LOGIN_PASSWD} ${SSH_PASSWD}
-      - run:
-          comannd: sleep 120
-      - run:
-          command: sudo pip install ansible
-      - run:
-          command: |
-            git clone https://github.com/ansible-playbooks-centos7/ansible.git
-            cd ansible
-            ansible-playbook -i "${IPV4}," install.yml --extra-vars "ansible_user=root ansible_password=${SSH_PASSWD}"
+#      - run:
+#          comannd: sleep 120
+#      - run:
+#          command: sudo pip install ansible
+#      - run:
+#          command: |
+#            git clone https://github.com/ansible-playbooks-centos7/ansible.git
+#            cd ansible
+#            ansible-playbook -i "${IPV4}," install.yml --extra-vars "ansible_user=root ansible_password=${SSH_PASSWD}"
