@@ -18,8 +18,7 @@ jobs:
       - run:
           comannd: sleep 120
       - run:
-          command: |
-            sudo pip install ansible
+          command: sudo pip install ansible
       - run:
           command: |
             git clone https://github.com/ansible-playbooks-centos7/ansible.git
