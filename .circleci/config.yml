@@ -5,22 +5,23 @@ jobs:
     docker:
       - image: selenium/standalone-chrome
     steps:
-#      - checkout
-#      - run: 
-#          command: |
-#            sudo apt -y update
-#            sudo apt -y install python-pip
-#            sudo pip install selenium
-#            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#            sudo dpkg -i google-chrome-stable_current_amd64.deb
-#      - run: 
-#          command: python execute.py ${IPV4} ${LOGIN_PASSWD} ${SSH_PASSWD}
-#      - run:
-#          comannd: sleep 120
-      - run:
+      - checkout
+      - run: 
           command: |
             sudo apt -y update
             sudo apt -y install python-pip
+            sudo pip install selenium
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i google-chrome-stable_current_amd64.deb
+      - run: 
+          command: python execute.py ${IPV4} ${LOGIN_PASSWD} ${SSH_PASSWD}
+      - run:
+          comannd: sleep 120
+      - run:
+          command: |
             sudo pip install ansible
       - run:
-          command: ansible -i ${IPV4}, -m ping --extra-vars "ansible_user=root ansible_password=${SSH_PASSWD}"
+          command: |
+            git clone https://github.com/ansible-playbooks-centos7/ansible.git
+            cd ansible
+            ansible-playbook -i "${IPV4}," install.yml --extra-vars "ansible_user=root ansible_password=${SSH_PASSWD}"
