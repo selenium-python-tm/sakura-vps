@@ -23,4 +23,4 @@ jobs:
             sudo apt -y install python-pip
             sudo pip install ansible
       - run:
-          command: ansible -m "cat /etc/readhat-release"
+          command: ansible -i ${IPV4}, -m ping --extra-vars "ansible_user=root ansible_password=${SSH_PASSWD}"
